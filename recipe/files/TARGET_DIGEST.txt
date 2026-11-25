@@ -1,0 +1,9 @@
+image_manifest_digest=sha256:d19615aad99d9715a0cf91e41647795dac2d49ee7c2b6acc83d2fbed1c1212c5
+config_digest=sha256:d292c98614142d95d6bd69bd682c5e0b29d1fa0e2ee9d09b79adead52530aa9d
+tag=readystack/virtcontroller:v1.9.1-CE-debian12-r2
+probe_port=80
+probe_path=/
+probe_timeout=180
+verify_boot=oneshot
+verify_oneshot_arg=--help
+verify_oneshot_expect=--launcher-image
