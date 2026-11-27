@@ -11,9 +11,9 @@
 # product-kits/kubevirt-stack/kubevirt/mk-kits.py from strategies/virtcontroller.json; never edit by hand.
 # =====================================================================================================================
 FROM quay.io/kubevirt/builder:2606231619-4fe2cd536f@sha256:a48a7dd5a1b80602269b8c714fdaa54f729a9a4a4d096f7ee0d15c94cef343e8 AS kubevirt-build
-# the commit's date as the default (as every kit declares it): assemble_kit's scratch build passes no build arguments,
+# the release's date as the default (as every kit declares it): assemble_kit's scratch build passes no build arguments,
 # and kubevirt-build.sh refuses to build without it; the canonical build and BUILD_OFFLINE.sh pass the same value
-ARG SOURCE_DATE_EPOCH=1791523273
+ARG SOURCE_DATE_EPOCH=1795617155
 ARG KUBEVIRT_VERSION=v1.9.1
 COPY vendored/virtcontroller-src/ /root/go/src/kubevirt.io/kubevirt/
 COPY vendored/bazel-repository-cache/ /kvs/cache/repo/
@@ -29,7 +29,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SSL_CERT_F
 WORKDIR /
 USER 1001
 ENTRYPOINT ["/usr/bin/virt-controller"]
-ARG SOURCE_DATE_EPOCH=1791523273
+ARG SOURCE_DATE_EPOCH=1795617155
 # >>> readystack OCI labels: strategies/virtcontroller.json image_labels plus the standard OCI labels,
 # the set a generated kit carries (gen_dockerfile.label_lines). Written by scripts/kit_migrations.py;
 # scripts/retarget.py re-renders it with every retarget. Never edit it by hand.
@@ -37,6 +37,6 @@ LABEL org.opencontainers.image.licenses="Apache-2.0"
 LABEL org.opencontainers.image.title="virt-controller"
 LABEL org.opencontainers.image.description="KubeVirt v1.9.1 virt-controller, built offline and bit for bit by KubeVirt's own Bazel build: the cluster controller that turns VirtualMachines into virt-launcher Pods and drives migrations."
 LABEL org.opencontainers.image.source="https://github.com/kubevirt/kubevirt"
-LABEL org.opencontainers.image.version="v1.9.1-CE-debian12-r2"
+LABEL org.opencontainers.image.version="v1.9.1-CE-debian12-r3"
 LABEL org.opencontainers.image.revision="c3d19093f9c7b843b3879b18dc088911c081c39e"
 # <<< readystack OCI labels

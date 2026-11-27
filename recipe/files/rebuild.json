@@ -16,8 +16,8 @@
     "context": ".",
     "dockerfile": "Dockerfile.offline.pinned",
     "mtime_policy": "clamp",
-    "source_date_epoch": 1791523273,
-    "tree_hash": "sha256:3a4a79a08256df72f0129bfcff45815a03da7a815c03777095efa0ad34536870"
+    "source_date_epoch": 1795617155,
+    "tree_hash": "sha256:3405ca4dd561689b612407cdf999681831d3781774c1eef62d2aa48ec6687eec"
   },
   "probe": {
     "oneshot": {
@@ -29,8 +29,8 @@
   },
   "schema": "readystack-rebuild-bundle/v0.1",
   "subject": {
-    "config_digest": "sha256:d292c98614142d95d6bd69bd682c5e0b29d1fa0e2ee9d09b79adead52530aa9d",
-    "image_manifest_digest": "sha256:d19615aad99d9715a0cf91e41647795dac2d49ee7c2b6acc83d2fbed1c1212c5",
-    "name": "docker.io/readystack/virtcontroller:v1.9.1-CE-debian12-r2"
+    "config_digest": "sha256:53cea0d1af740029aee597a91b5d535ea97e986bf7704c0a81befba610205ac8",
+    "image_manifest_digest": "sha256:dd3edb1d6a2c889690e769e843601af944de1674c5ed4084a3824b27dfaefb7d",
+    "name": "docker.io/readystack/virtcontroller:v1.9.1-CE-debian12-r3"
   }
 }

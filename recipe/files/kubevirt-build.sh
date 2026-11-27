@@ -26,7 +26,7 @@ CACHE=${KVS_REPO_CACHE:-/kvs/cache/repo}
 export KUBEVIRT_GIT_COMMIT KUBEVIRT_GIT_TREE_STATE KUBEVIRT_GIT_VERSION
 : "${SOURCE_DATE_EPOCH:?SOURCE_DATE_EPOCH must be set for a reproducible build}"
 [ "$SOURCE_DATE_EPOCH" = "$KUBEVIRT_SOURCE_DATE_EPOCH" ] || {
-  echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH, but this kit pins $KUBEVIRT_SOURCE_DATE_EPOCH (the commit date)" >&2; exit 1; }
+  echo "SOURCE_DATE_EPOCH=$SOURCE_DATE_EPOCH, but this kit pins $KUBEVIRT_SOURCE_DATE_EPOCH (the release's date)" >&2; exit 1; }
 export SOURCE_DATE_EPOCH
 
 case "$C" in

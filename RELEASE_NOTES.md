@@ -1,47 +1,47 @@
-# virt-controller v1.9.1 — ReadyStack release `v1.9.1-CE-debian12-r2`
+# virt-controller v1.9.1 — ReadyStack release `v1.9.1-CE-debian12-r3`
 
-Generated 2026-11-08 from this release's build records and strategy. Statements that come from a single record name it in brackets; the others come from this release's strategy and build log.
+Generated 2026-11-25 from this release's build records and strategy. Statements that come from a single record name it in brackets; the others come from this release's strategy and build log.
 
 ## Release
 
-- **Image:** `readystack/virtcontroller:v1.9.1-CE-debian12-r2` (linux/amd64). Index digest `sha256:4d3bda37aecbdf99ff07c02f17978f8ee800179f0172981d17b0ac26ea9142ec` [`docs/provenance/LOCKED_DIGEST.txt`].
-- **Image manifest digest:** `sha256:d19615aad99d9715a0cf91e41647795dac2d49ee7c2b6acc83d2fbed1c1212c5` [`TARGET_DIGEST.txt`].
+- **Image:** `readystack/virtcontroller:v1.9.1-CE-debian12-r3` (linux/amd64). Index digest `sha256:bd14ffe7770328de993b4b08406c962b3458ef53a84bc5c805b571a0e93933aa` [`docs/provenance/LOCKED_DIGEST.txt`].
+- **Image manifest digest:** `sha256:dd3edb1d6a2c889690e769e843601af944de1674c5ed4084a3824b27dfaefb7d` [`TARGET_DIGEST.txt`].
 - **Upstream:** virt-controller v1.9.1 built from source at `v1.9.1` of https://github.com/kubevirt/kubevirt — upstream notes: https://github.com/kubevirt/kubevirt/releases/tag/v1.9.1 [`docs/provenance/BUILD_RECIPE.json`].
 - **Base image:** `gcr.io/distroless/base-debian12@sha256:ca3f629c350fd1cb653caee7c5aed8967be4e43d9577fbb1cb4ed66c260e224e`; runtime user `nonroot-user`.
 - **Build:** `source-rebuild-go`, compiled offline with `--network=none`.
-- **Supersedes:** ReadyStack release `v1.9.1-CE-debian12-r1`.
+- **Supersedes:** ReadyStack release `v1.9.1-CE-debian12-r2`.
 
 ## What changed in this release
 
 - Upstream version unchanged (v1.9.1); ReadyStack rebuild.
-- KubeVirt v1.9.1's virt-controller is unchanged from the release this supersedes (v1.9.1-CE-debian12-r1); this release rebuilds it. Changes: golang.org/x/net moves from v0.60.0 to v0.62.0 in every binary it links (GO-2026-6860, GO-2026-6866: CVE-2026-78661, high), with the versions it requires: golang.org/x/crypto v0.58.0, golang.org/x/sys v0.49.0, golang.org/x/text v0.43.0, golang.org/x/term v0.47.0 and golang.org/x/tools v0.51.0 (patch 0006, made with KubeVirt's own dependency-update path; google.golang.org/grpc stays at v1.83.2). The image's version label now names this release. Settings, ports and data are those of v1.9.1-CE-debian12-r1: replace it with this image as before.
+- KubeVirt v1.9.1's virt-controller is unchanged from the release this supersedes (v1.9.1-CE-debian12-r2); this release rebuilds it. Changes: github.com/insomniacslk/dhcp moves from v0.0.0-20240829085014-a3a4c1f04475 to v0.0.0-20260719225207-c76316d4aa82 in virt-controller (GHSA-jp3c-6v3g-mpxv, high: a DHCP reply whose IPv4 header claims fewer than eight payload bytes made dhcpv4/nclient4 panic), in patch 0006, made with KubeVirt's own dependency-update path; no other module moves, and KubeVirt v1.10.0 still ships the earlier version. The image is dated when this release was cut (2026-11-25), no longer by the upstream commit. The image's version label now names this release. Settings, ports and data are those of v1.9.1-CE-debian12-r2: replace it with this image as before.
 
-## Security status at release (measured 2026-11-08)
+## Security status at release (measured 2026-11-25)
 
 - **Docker Scout:** 0 fixable critical/high vulnerabilities; runs as `1001` (non-root); SBOM + provenance attestations present (SPDX SBOM + SLSA v1) [`docs/provenance/SCOUT_VERDICT.json`].
 - **OSV cross-check:** no fixable critical/high vulnerability beyond Docker Scout's findings.
-- **Signature:** cosign signature verified by ReadyStack's release gate before publishing; check it yourself with `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtcontroller:v1.9.1-CE-debian12-r2` (signatures are recorded in the public Sigstore transparency log).
+- **Signature:** cosign signature verified by ReadyStack's release gate before publishing; check it yourself with `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtcontroller:v1.9.1-CE-debian12-r3` (signatures are recorded in the public Sigstore transparency log).
 - **ReadyStack release check at release:** passed (ReadyStack's own test, not a Docker Scout grade). Vulnerabilities are disclosed every day and the image never changes, so it is re-checked daily, beside Docker Scout's own dated grade, at https://readystack.dev/queue.
 
 ## Reproducibility
 
-Rebuilds offline from this archive to the identical image digest `sha256:d19615aad99d9715a0cf91e41647795dac2d49ee7c2b6acc83d2fbed1c1212c5`: run `./BUILD_OFFLINE.sh`, then `./VERIFY_OFFLINE.sh` (add `--online` to confirm the Docker Hub tag holds the same digest). Before publishing, ReadyStack rebuilt the kit with `./BUILD_OFFLINE.sh` and compared the result with the published digest [`docs/provenance/REPRO_VERIFICATION.json`], then ran `./BUILD_OFFLINE.sh` and `./VERIFY_OFFLINE.sh` from this archive (without `--online`).
+Rebuilds offline from this archive to the identical image digest `sha256:dd3edb1d6a2c889690e769e843601af944de1674c5ed4084a3824b27dfaefb7d`: run `./BUILD_OFFLINE.sh`, then `./VERIFY_OFFLINE.sh` (add `--online` to confirm the Docker Hub tag holds the same digest). Before publishing, ReadyStack rebuilt the kit with `./BUILD_OFFLINE.sh` and compared the result with the published digest [`docs/provenance/REPRO_VERIFICATION.json`], then ran `./BUILD_OFFLINE.sh` and `./VERIFY_OFFLINE.sh` from this archive (without `--online`).
 
 ## Validation
 
-- 8 of 8 runbook checks passed (8 authored) on the stack's 3-node integration cluster, recorded 2026-10-29T02:34:55Z [`docs/validation/test-results.json`, from the run's record `docs/stack/RUNBOOK_EVIDENCE.json`]. They are the checks of the stack's operator runbook that name this component; no container of this image was started on its own for them. The record does not show this release's image (`sha256:d19615aad99d9715a0cf91e41647795dac2d49ee7c2b6acc83d2fbed1c1212c5`) in that run: it lists the component's images as they were then, an earlier build or a tag, so the checks describe the component, not this digest.
+- 8 of 8 runbook checks passed (8 authored) on the stack's 3-node integration cluster, recorded 2026-10-29T02:34:55Z [`docs/validation/test-results.json`, from the run's record `docs/stack/RUNBOOK_EVIDENCE.json`]. They are the checks of the stack's operator runbook that name this component; no container of this image was started on its own for them. The record does not show this release's image (`sha256:dd3edb1d6a2c889690e769e843601af944de1674c5ed4084a3824b27dfaefb7d`) in that run: it lists the component's images as they were then, an earlier build or a tag, so the checks describe the component, not this digest.
 - Failed cases are listed in `docs/validation/FAILED_TESTS.md`.
 
 ## Known issues
 
-- None found (reviewed by held semantic review (Claude) on 2026-11-08).
+- **low** (ReadyStack package): Admin handbook: The sentence says the install bundle's images.tsv gives this image the name readystack/virtcontroller:v1.9.1-CE-debian12-r3, but the stack bundle's images.tsv row for virtcontroller names… [`RSD-virtcontroller-554e5122b7`]
 
 ## Verify this archive
 
 ```
 sha256sum -c CHECKSUMS.sha256
 ./BUILD_OFFLINE.sh && ./VERIFY_OFFLINE.sh --online
-cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtcontroller:v1.9.1-CE-debian12-r2
+cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtcontroller:v1.9.1-CE-debian12-r3
 ```
 
 ReadyStack records every signature in the public Sigstore transparency log (Rekor), so the command needs no extra flags.

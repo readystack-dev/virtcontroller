@@ -9,7 +9,7 @@
 FROM quay.io/kubevirt/builder:2606231619-4fe2cd536f@sha256:a48a7dd5a1b80602269b8c714fdaa54f729a9a4a4d096f7ee0d15c94cef343e8 AS vendor
 ARG KUBEVIRT_VERSION=v1.9.1
 ARG KUBEVIRT_COMMIT=c3d19093f9c7b843b3879b18dc088911c081c39e
-ARG SOURCE_DATE_EPOCH=1791523273
+ARG SOURCE_DATE_EPOCH=1795617155
 COPY patches/ /kvs/kit/patches/
 COPY vendor/ /kvs/kit/vendor/
 COPY kubevirt-build.sh oci-rootfs.py gen_rpmdb.py kubevirt-pins.env /kvs/kit/

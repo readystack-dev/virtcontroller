@@ -1,14 +1,14 @@
 {
   "schema": "kitforge.build_recipe.v1",
   "slug": "virtcontroller",
-  "image": "readystack/virtcontroller:v1.9.1-CE-debian12-r2",
+  "image": "readystack/virtcontroller:v1.9.1-CE-debian12-r3",
   "build_method": "source-rebuild-go",
   "source": {
     "repo": "https://github.com/kubevirt/kubevirt",
     "ref": "v1.9.1",
     "commit": "c3d19093f9c7b843b3879b18dc088911c081c39e",
-    "source_date_epoch": 1791523273,
-    "source_date_epoch_provenance": "committer date of c3d19093f9c7b843b3879b18dc088911c081c39e, the commit tag v1.9.1 points to (2026-10-09T05:21:13Z), as registry/stacks/kubevirt-stack.json pins it.",
+    "source_date_epoch": 1795617155,
+    "source_date_epoch_provenance": "the time release v1.9.1-CE-debian12-r3 was cut (2026-11-25T14:32:35Z), by scripts/retarget.py --rev-bump: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit c3d19093f9c7, dated 2026-10-09T05:21:13Z (source.commit_epoch).",
     "builder_image": "quay.io/kubevirt/builder:2606231619-4fe2cd536f@sha256:a48a7dd5a1b80602269b8c714fdaa54f729a9a4a4d096f7ee0d15c94cef343e8",
     "builder_note": "KubeVirt's own builder at v1.9.1 (hack/dockerized kubevirt_builder_version 2606231619-4fe2cd536f; CentOS Stream 9, Bazel 6.5.0), pinned by its linux/amd64 manifest digest and carried in the kit as an OCI layout (bases/).",
     "bazel_target": "//cmd/virt-controller:virt-controller-image",
@@ -35,7 +35,9 @@
         "why": "libssl3 3.0.22-1~deb12u2 over the distroless base (CVE-2026-75803 critical + 4 high); remove when distroless ships it"
       }
     ],
-    "vendor_committed": true
+    "vendor_committed": true,
+    "source_date_epoch_basis": "release-cut",
+    "commit_epoch": 1791523273
   },
   "binaries_from_source": null,
   "runtime_packages": null

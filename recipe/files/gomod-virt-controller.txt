@@ -33,7 +33,7 @@ virt-controller	github.com/google/gnostic-models	v0.7.0
 virt-controller	github.com/google/go-cmp	v0.7.0
 virt-controller	github.com/google/uuid	v1.6.0
 virt-controller	github.com/gorilla/websocket	v1.5.4-0.20250319132907-e064f32e3674
-virt-controller	github.com/insomniacslk/dhcp	v0.0.0-20240829085014-a3a4c1f04475
+virt-controller	github.com/insomniacslk/dhcp	v0.0.0-20260719225207-c76316d4aa82
 virt-controller	github.com/json-iterator/go	v1.1.12
 virt-controller	github.com/k8snetworkplumbingwg/network-attachment-definition-client	v1.7.7
 virt-controller	github.com/krolaw/dhcp4	v0.0.0-20180925202202-7cead472c414

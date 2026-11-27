@@ -81,7 +81,7 @@ hack/bump-distroless.sh).
 +    name = "libssl3_x86_64",
 +    srcs = ["@debian_bookworm_security_libssl3_amd64//file"],
 +    outs = ["libssl3_x86_64.tar"],
-+    cmd = "python3 $(location deb2layer.py) $(location @debian_bookworm_security_libssl3_amd64//file) $@ libssl3 1791523273",
++    cmd = "python3 $(location deb2layer.py) $(location @debian_bookworm_security_libssl3_amd64//file) $@ libssl3 1795617155",
 +    tools = ["deb2layer.py"],
 +    visibility = ["//visibility:public"],
 +)

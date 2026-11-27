@@ -1,4 +1,4 @@
-# Provenance — virt-controller (`v1.9.1-CE-debian12-r2`)
+# Provenance — virt-controller (`v1.9.1-CE-debian12-r3`)
 
 Every item below is copied from a record in this archive; the record is named in brackets.
 
@@ -13,18 +13,18 @@ Every item below is copied from a record in this archive; the record is named in
 
 - Method: `source-rebuild-go`; base image `gcr.io/distroless/base-debian12@sha256:ca3f629c350fd1cb653caee7c5aed8967be4e43d9577fbb1cb4ed66c260e224e`
 - Compiled with `--network=none` from vendored source, dependencies and base images; BuildKit pinned to `moby/buildkit:v0.31.2` (shipped in `toolchain/`).
-- SOURCE_DATE_EPOCH: `1791523273` [`SOURCE_DATE_EPOCH.txt`]
+- SOURCE_DATE_EPOCH: `1795617155` [`SOURCE_DATE_EPOCH.txt`]
 - Frozen inputs: [`docs/provenance/FREEZE_MANIFEST.json`], build recipe: [`docs/provenance/BUILD_RECIPE.json`].
 
 ## Output
 
-- Published image: `readystack/virtcontroller:v1.9.1-CE-debian12-r2` — index digest `sha256:4d3bda37aecbdf99ff07c02f17978f8ee800179f0172981d17b0ac26ea9142ec` [`docs/provenance/LOCKED_DIGEST.txt`]
-- linux/amd64 image digest `sha256:d19615aad99d9715a0cf91e41647795dac2d49ee7c2b6acc83d2fbed1c1212c5` — reproduced from this archive before publishing [`docs/provenance/REPRO_VERIFICATION.json`].
+- Published image: `readystack/virtcontroller:v1.9.1-CE-debian12-r3` — index digest `sha256:bd14ffe7770328de993b4b08406c962b3458ef53a84bc5c805b571a0e93933aa` [`docs/provenance/LOCKED_DIGEST.txt`]
+- linux/amd64 image digest `sha256:dd3edb1d6a2c889690e769e843601af944de1674c5ed4084a3824b27dfaefb7d` — reproduced from this archive before publishing [`docs/provenance/REPRO_VERIFICATION.json`].
 
 ## Attestations and signature
 
 - SBOM + SLSA provenance attached to the image: attached: an SPDX SBOM and SLSA v1 provenance [`docs/provenance/SCOUT_VERDICT.json`]
-- cosign signature by the ReadyStack release key: verified before publishing. Check it: `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtcontroller:v1.9.1-CE-debian12-r2`
+- cosign signature by the ReadyStack release key: verified before publishing. Check it: `cosign verify --key https://readystack.dev/keys/cosign.pub readystack/virtcontroller:v1.9.1-CE-debian12-r3`
 
 ## Pinned inputs, and why
 
@@ -32,5 +32,5 @@ Every item below is copied from a record in this archive; the record is named in
 
 ## Build trail
 
-- How this release passed through the ReadyStack harness, record by record (every chain, drive, stage, review round, defect and check, each naming the record it is copied from): `ReadyStack-virtcontroller-v1.9.1-CE-debian12-r2.trail.json`, published beside this archive and signed with the release key (`ReadyStack-virtcontroller-v1.9.1-CE-debian12-r2.trail.json.sigstore`), and readable at https://readystack.dev/products/virtcontroller/trail/v1.9.1-CE-debian12-r2.
+- How this release passed through the ReadyStack harness, record by record (every chain, drive, stage, review round, defect and check, each naming the record it is copied from): `ReadyStack-virtcontroller-v1.9.1-CE-debian12-r3.trail.json`, published beside this archive and signed with the release key (`ReadyStack-virtcontroller-v1.9.1-CE-debian12-r3.trail.json.sigstore`), and readable at https://readystack.dev/products/virtcontroller/trail/v1.9.1-CE-debian12-r3.
 

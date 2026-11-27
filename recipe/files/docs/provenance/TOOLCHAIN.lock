@@ -1,18 +1,9 @@
 {
   "apt_refresh": [],
   "build_method": "source-rebuild-go",
-  "chain_id": 875,
+  "chain_id": 1267,
   "dep_bumps": [],
-  "expected_residuals": [
-    {
-      "cve": "GO-2026-6237",
-      "disposition": "below-high-not-bumped",
-      "notes": "fixed upstream in 0.0.0-20260719225207-c76316d4aa82; patch 0006 bumps only modules with a linked fixable critical or high (owner ruling 2026-10-28); this finding is not yet rated, so the module stays at KubeVirt v1.9.1's version.",
-      "purl": "pkg:golang/github.com/insomniacslk/dhcp@v0.0.0-20240829085014-a3a4c1f04475",
-      "scanner": "grype 0.120.1, DB 2026-10-28, on the image's Go module SBOM (/usr/share/kubevirt/sbom)",
-      "severity": "unknown"
-    }
-  ],
+  "expected_residuals": [],
   "images": [
     {
       "digest": "sha256:a48a7dd5a1b80602269b8c714fdaa54f729a9a4a4d096f7ee0d15c94cef343e8",
@@ -38,6 +29,7 @@
     "builder_image": "quay.io/kubevirt/builder:2606231619-4fe2cd536f@sha256:a48a7dd5a1b80602269b8c714fdaa54f729a9a4a4d096f7ee0d15c94cef343e8",
     "builder_note": "KubeVirt's own builder at v1.9.1 (hack/dockerized kubevirt_builder_version 2606231619-4fe2cd536f; CentOS Stream 9, Bazel 6.5.0), pinned by its linux/amd64 manifest digest and carried in the kit as an OCI layout (bases/).",
     "commit": "c3d19093f9c7b843b3879b18dc088911c081c39e",
+    "commit_epoch": 1791523273,
     "go_sdk": "go1.26.10.linux-amd64.tar.gz sha256 ccfe7ae822d2c2f41f4fe7c956199967a4dac22d0ee0d2b2bfdb440aab3b20c5 (KubeVirt v1.9.1 pins 1.26.4; raised in its Bazel Go SDK pin only, patch 0001)",
     "patches": [
       {
@@ -63,8 +55,9 @@
     ],
     "ref": "v1.9.1",
     "repo": "https://github.com/kubevirt/kubevirt",
-    "source_date_epoch": 1791523273,
-    "source_date_epoch_provenance": "committer date of c3d19093f9c7b843b3879b18dc088911c081c39e, the commit tag v1.9.1 points to (2026-10-09T05:21:13Z), as registry/stacks/kubevirt-stack.json pins it.",
+    "source_date_epoch": 1795617155,
+    "source_date_epoch_basis": "release-cut",
+    "source_date_epoch_provenance": "the time release v1.9.1-CE-debian12-r3 was cut (2026-11-25T14:32:35Z), by scripts/retarget.py --rev-bump: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit c3d19093f9c7, dated 2026-10-09T05:21:13Z (source.commit_epoch).",
     "vendor_committed": true
   },
   "version": "v1.9.1"
